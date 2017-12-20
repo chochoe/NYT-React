@@ -36,10 +36,16 @@ db.once('open', function() {
 	console.log('Mongoose connection successful.');
 });
 
-var Article = require('./controllers/newsController.js')
+var Article = require('./models/article.js');
+
+var router = require('./controllers/newsController.js')
 app.use('/', router);
 
 const port = process.env.PORT || 3001;
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
+
+
+// configure express routes
+// configure layout into main, searched, saved components
